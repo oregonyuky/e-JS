@@ -1,0 +1,12 @@
+const express = require('express')
+const MaratonaController = require('../controllers/MaratonaController')
+const rotas = express.Router()
+rotas.post('/', MaratonaController.criar)
+rotas.put('/:id', MaratonaController.atualizar)
+rotas.get('/', MaratonaController.listar)
+rotas.get('/:id', MaratonaController.buscar)
+rotas.get('/hoje', MaratonaController.maratonaHoje)
+rotas.get('/atrasadas', MaratonaController.maratonaAtrasada)
+rotas.get('/concluidas', MaratonaController.maratonaConcluida)
+rotas.delete('/:id', MaratonaController.deletar)
+module.exports = rotas
